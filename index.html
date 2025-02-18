@@ -67,92 +67,35 @@
         flex: 1 1 100%;
       }
     }
+    /* Styling for the Plotly chart iframe */
+    #plotly-chart-container {
+      max-width: 1000px;
+      margin: 2em auto;
+    }
+    #plotly-chart-container iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
   </style>
+  <!-- (Optional) Include Plotly.js if you plan on any inline Plotly code -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    
   <header>
     <h1>Cotton - Proprietary Moisture Indices</h1>
   </header>
 
-  <!-- Tabs for switching between indices -->
+  <!-- Tabs for switching between indices (swapped order) -->
   <div class="tabs">
-    <div class="tab active" data-tab="index1">Soil Drought Index</div>
-    <div class="tab" data-tab="index2">Root Zone Moisture Index</div>
+    <div class="tab active" data-tab="index2">Root Zone Moisture Index</div>
+    <div class="tab" data-tab="index1">Soil Drought Index</div>
   </div>
 
   <!-- Content for each index -->
   <div class="content">
-    
-    <!-- Index 1 Content -->
-    <div class="tab-content" id="index1">
-      <!-- Timeseries Section -->
-      <div class="section">
-        <h2>Timeseries</h2>
-        <!-- Composite Chart -->
-        <div>
-          <h3>Composite Chart</h3>
-          <img src="C:/Users/e684557/Data/PYTHON/VisualStudioCode/DAILY SDI MAPS/COTN_2025-02-18.png" alt="Composite Timeseries for Soil Drought Index">
-        </div>
-        <!-- Forecast Details -->
-        <div>
-          <h3>Forecast Details</h3>
-          <div class="image-grid">
-            <!-- ECMWF ens -->
-            <div class="forecast-card">
-              <h3>ECMWF ENS</h3>
-              <img src="images/index1_ecmwf_ens.png" alt="ECMWF ENS Timeseries">
-            </div>
-            <!-- ECMWF op -->
-            <div class="forecast-card">
-              <h3>ECMWF OP</h3>
-              <img src="images/index1_ecmwf_op.png" alt="ECMWF OP Timeseries">
-            </div>
-            <!-- GFS ens -->
-            <div class="forecast-card">
-              <h3>GFS ENS</h3>
-              <img src="images/index1_gfs_ens.png" alt="GFS ENS Timeseries">
-            </div>
-            <!-- GFS op -->
-            <div class="forecast-card">
-              <h3>GFS OP</h3>
-              <img src="images/index1_gfs_op.png" alt="GFS OP Timeseries">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Map Section -->
-      <div class="section">
-        <h2>Maps</h2>
-        <div class="image-grid">
-          <!-- For each forecast, show Today and Forecast End maps -->
-          <div class="forecast-card">
-            <h3>ECMWF ENS</h3>
-            <img src="images/index1_ecmwf_ens_today.png" alt="ECMWF ENS Today">
-            <img src="images/index1_ecmwf_ens_end.png" alt="ECMWF ENS Forecast End">
-          </div>
-          <div class="forecast-card">
-            <h3>ECMWF OP</h3>
-            <img src="images/index1_ecmwf_op_today.png" alt="ECMWF OP Today">
-            <img src="images/index1_ecmwf_op_end.png" alt="ECMWF OP Forecast End">
-          </div>
-          <div class="forecast-card">
-            <h3>GFS ENS</h3>
-            <img src="images/index1_gfs_ens_today.png" alt="GFS ENS Today">
-            <img src="images/index1_gfs_ens_end.png" alt="GFS ENS Forecast End">
-          </div>
-          <div class="forecast-card">
-            <h3>GFS OP</h3>
-            <img src="images/index1_gfs_op_today.png" alt="GFS OP Today">
-            <img src="images/index1_gfs_op_end.png" alt="GFS OP Forecast End">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Index 2 Content -->
-    <div class="tab-content" id="index2" style="display:none;">
+    <!-- Root Zone Moisture Index Content (Index 2) -->
+    <div class="tab-content" id="index2">
       <!-- Timeseries Section -->
       <div class="section">
         <h2>Timeseries</h2>
@@ -188,7 +131,6 @@
           </div>
         </div>
       </div>
-
       <!-- Map Section -->
       <div class="section">
         <h2>Maps</h2>
@@ -218,21 +160,92 @@
       </div>
     </div>
 
+    <!-- Soil Drought Index Content (Index 1) -->
+    <div class="tab-content" id="index1" style="display:none;">
+      <!-- Timeseries Section -->
+      <div class="section">
+        <h2>Timeseries</h2>
+        <!-- Composite Chart -->
+        <div>
+          <h3>Composite Chart</h3>
+          <!-- Updated to use a relative path; ensure the image is in your repository's "images" folder -->
+          <img src="images/COTN_2025-02-18.png" alt="Composite Timeseries for Soil Drought Index">
+        </div>
+        <!-- Forecast Details -->
+        <div>
+          <h3>Forecast Details</h3>
+          <div class="image-grid">
+            <!-- ECMWF ens -->
+            <div class="forecast-card">
+              <h3>ECMWF ENS</h3>
+              <img src="images/index1_ecmwf_ens.png" alt="ECMWF ENS Timeseries">
+            </div>
+            <!-- ECMWF op -->
+            <div class="forecast-card">
+              <h3>ECMWF OP</h3>
+              <img src="images/index1_ecmwf_op.png" alt="ECMWF OP Timeseries">
+            </div>
+            <!-- GFS ens -->
+            <div class="forecast-card">
+              <h3>GFS ENS</h3>
+              <img src="images/index1_gfs_ens.png" alt="GFS ENS Timeseries">
+            </div>
+            <!-- GFS op -->
+            <div class="forecast-card">
+              <h3>GFS OP</h3>
+              <img src="images/index1_gfs_op.png" alt="GFS OP Timeseries">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Map Section -->
+      <div class="section">
+        <h2>Maps</h2>
+        <div class="image-grid">
+          <!-- For each forecast, show Today and Forecast End maps -->
+          <div class="forecast-card">
+            <h3>ECMWF ENS</h3>
+            <img src="images/index1_ecmwf_ens_today.png" alt="ECMWF ENS Today">
+            <img src="images/index1_ecmwf_ens_end.png" alt="ECMWF ENS Forecast End">
+          </div>
+          <div class="forecast-card">
+            <h3>ECMWF OP</h3>
+            <img src="images/index1_ecmwf_op_today.png" alt="ECMWF OP Today">
+            <img src="images/index1_ecmwf_op_end.png" alt="ECMWF OP Forecast End">
+          </div>
+          <div class="forecast-card">
+            <h3>GFS ENS</h3>
+            <img src="images/index1_gfs_ens_today.png" alt="GFS ENS Today">
+            <img src="images/index1_gfs_ens_end.png" alt="GFS ENS Forecast End">
+          </div>
+          <div class="forecast-card">
+            <h3>GFS OP</h3>
+            <img src="images/index1_gfs_op_today.png" alt="GFS OP Today">
+            <img src="images/index1_gfs_op_end.png" alt="GFS OP Forecast End">
+          </div>
+        </div>
+      </div>
+    </div>
   </div> <!-- End .content -->
 
+  <!-- Section to embed the interactive Plotly chart -->
+  <div id="plotly-chart-container">
+    <h2>Interactive Forecast Chart</h2>
+    <iframe src="plotly_chart.html"></iframe>
+  </div>
+
   <script>
-    // Simple tab switching
+    // Simple tab switching script
     const tabs = document.querySelectorAll('.tab');
     const tabContents = document.querySelectorAll('.tab-content');
-    
+
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Remove active class from all tabs
+        // Remove active class from all tabs and hide all tab contents
         tabs.forEach(t => t.classList.remove('active'));
-        // Hide all tab contents
         tabContents.forEach(content => content.style.display = 'none');
-        
-        // Add active class to the clicked tab and show its content
+
+        // Activate the clicked tab and display its content
         tab.classList.add('active');
         document.getElementById(tab.getAttribute('data-tab')).style.display = 'block';
       });
