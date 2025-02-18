@@ -8,6 +8,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
     header {
       background: #333;
@@ -69,15 +70,15 @@
     }
     /* Styling for the Plotly chart container */
     #plotly-chart-container {
-      max-width: 400px;
+      width: 90%;          /* Use 90% of the viewport width */
+      max-width: 600px;     /* But no wider than 600px */
       margin: 2em auto;
       text-align: center;
     }
     #plotly-chart-container iframe {
       width: 100%;
-      height: 200px;
+      height: 300px;        /* Adjust height as needed */
       border: none;
-      /* Center the iframe */
       display: block;
       margin: 0 auto;
     }
