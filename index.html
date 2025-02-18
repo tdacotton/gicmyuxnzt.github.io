@@ -16,22 +16,6 @@
       padding: 1em;
       text-align: center;
     }
-    /* Styling for interactive chart containers */
-    .plotly-chart-container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 2em auto;
-      padding: 0 1em;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    .plotly-chart-container iframe {
-      width: 100%;
-      height: 600px;  /* Adjust height as needed */
-      border: none;
-      display: block;
-      margin: 0 auto;
-    }
     .tabs {
       display: flex;
       justify-content: center;
@@ -86,6 +70,22 @@
         flex: 1 1 100%;
       }
     }
+    /* Styling for the interactive Plotly chart inside each tab */
+    .plotly-chart-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 2em auto;
+      padding: 0 1em;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .plotly-chart-container iframe {
+      width: 100%;
+      height: 600px;  /* Adjust height as needed */
+      border: none;
+      display: block;
+      margin: 0 auto;
+    }
   </style>
   <!-- (Optional) Include Plotly.js if you plan on any inline Plotly code -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -95,19 +95,7 @@
     <h1>Cotton - Proprietary Moisture Indices</h1>
   </header>
 
-  <!-- Interactive Composite Chart for Root Zone Moisture Index -->
-  <div class="plotly-chart-container">
-    <h2>Interactive Forecast Chart - Root Zone Moisture Index</h2>
-    <iframe src="plotly_chart_rzmi.html"></iframe>
-  </div>
-
-  <!-- Interactive Composite Chart for Soil Drought Index -->
-  <div class="plotly-chart-container">
-    <h2>Interactive Forecast Chart - Soil Drought Index</h2>
-    <iframe src="plotly_chart_sdi.html"></iframe>
-  </div>
-
-  <!-- Tabs for switching between indices (detailed content) -->
+  <!-- Tabs for switching between indices -->
   <div class="tabs">
     <div class="tab active" data-tab="index2">Root Zone Moisture Index</div>
     <div class="tab" data-tab="index1">Soil Drought Index</div>
@@ -117,15 +105,18 @@
   <div class="content">
     <!-- Root Zone Moisture Index Content (Index 2) -->
     <div class="tab-content" id="index2">
+      <!-- Interactive Plot for Root Zone Moisture Index -->
+      <div class="plotly-chart-container">
+        <h2>Interactive Forecast Chart - Root Zone Moisture Index</h2>
+        <iframe src="plotly_chart_rzmi.html"></iframe>
+      </div>
       <!-- Timeseries Section -->
       <div class="section">
         <h2>Timeseries</h2>
-        <!-- Composite Chart Image -->
         <div>
           <h3>Composite Chart</h3>
           <img src="images/index2_composite.png" alt="Composite Timeseries for Root Zone Moisture Index">
         </div>
-        <!-- Forecast Details -->
         <div>
           <h3>Forecast Details</h3>
           <div class="image-grid">
@@ -178,15 +169,18 @@
 
     <!-- Soil Drought Index Content (Index 1) -->
     <div class="tab-content" id="index1" style="display:none;">
+      <!-- Interactive Plot for Soil Drought Index -->
+      <div class="plotly-chart-container">
+        <h2>Interactive Forecast Chart - Soil Drought Index</h2>
+        <iframe src="plotly_chart_sdi.html"></iframe>
+      </div>
       <!-- Timeseries Section -->
       <div class="section">
         <h2>Timeseries</h2>
-        <!-- Composite Chart Image -->
         <div>
           <h3>Composite Chart</h3>
           <img src="images/COTN_2025-02-18.png" alt="Composite Timeseries for Soil Drought Index">
         </div>
-        <!-- Forecast Details -->
         <div>
           <h3>Forecast Details</h3>
           <div class="image-grid">
