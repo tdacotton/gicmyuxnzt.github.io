@@ -9,17 +9,23 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden; /* Prevent horizontal scroll */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
     }
     header {
       background: #333;
       color: #fff;
       padding: 1em;
       text-align: center;
+      width: 100%;
     }
     .tabs {
       display: flex;
       justify-content: center;
       margin-top: 1em;
+      width: 100%;
+      max-width: 960px;
     }
     .tab {
       background: #eee;
@@ -36,18 +42,24 @@
       max-width: 960px;
       margin: 2em auto;
       padding: 0 1em;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
     }
     .section {
       margin-bottom: 2em;
+      text-align: center;
     }
     .section h2 {
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.5em;
+      display: inline-block;
     }
     .image-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 1em;
+      justify-content: center;
     }
     .image-grid img {
       max-width: 100%;
@@ -59,6 +71,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       padding: 1em;
       margin-bottom: 1em;
+      max-width: 400px;
     }
     .forecast-card h3 {
       margin-top: 0;
@@ -68,9 +81,10 @@
         flex: 1 1 100%;
       }
     }
-    /* Updated styling for the Plotly chart container */
+    /* Styling for the Plotly chart container */
     #plotly-chart-container {
       width: 100%;
+      max-width: 600px;
       margin: 2em auto;
       padding: 0 1em;
       box-sizing: border-box;
