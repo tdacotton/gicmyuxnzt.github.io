@@ -67,15 +67,19 @@
         flex: 1 1 100%;
       }
     }
-    /* Styling for the Plotly chart iframe */
+    /* Styling for the Plotly chart container */
     #plotly-chart-container {
-      max-width: 1000px;
+      max-width: 600px;
       margin: 2em auto;
+      text-align: center;
     }
     #plotly-chart-container iframe {
       width: 100%;
-      height: 800px;
+      height: 400px;
       border: none;
+      /* Center the iframe */
+      display: block;
+      margin: 0 auto;
     }
   </style>
   <!-- (Optional) Include Plotly.js if you plan on any inline Plotly code -->
@@ -168,7 +172,6 @@
         <!-- Composite Chart -->
         <div>
           <h3>Composite Chart</h3>
-          <!-- Updated to use a relative path; ensure the image is in your repository's "images" folder -->
           <img src="images/COTN_2025-02-18.png" alt="Composite Timeseries for Soil Drought Index">
         </div>
         <!-- Forecast Details -->
